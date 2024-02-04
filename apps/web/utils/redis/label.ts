@@ -50,6 +50,7 @@ export type emailheroLabelKey = "archived" | "labeled" | "acted" | "cold_email";
 // | "drafted"
 // | "suggested_label";
 export type emailheroLabels = Record<emailheroLabelKey, RedisLabel>;
+export type emailheroLabelsType = emailheroLabels;
 
 export const emailheroLabelKeys: emailheroLabelKey[] = [
   "archived",

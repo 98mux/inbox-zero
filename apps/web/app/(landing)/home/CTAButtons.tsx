@@ -16,9 +16,9 @@ export function CTAButtons() {
           posthog.capture("Clicked Get Started");
         }}
       >
-        Get Started for Free
+        Buy now
       </Button>
-      <Button
+      {/* <Button
         size="2xl"
         color="white"
         link={{ href: "/github", target: "_blank" }}
@@ -28,7 +28,7 @@ export function CTAButtons() {
       >
         <GithubIcon className="mr-2 h-4 w-4" />
         Star on GitHub
-      </Button>
+      </Button> */}
     </div>
   );
 }

@@ -3,13 +3,13 @@ import { type gmail_v1 } from "googleapis";
 import prisma from "@/utils/prisma";
 import {
   emailheroLabelKey,
-  // emailheroLabels,
   RedisLabel,
   myemailheroLabels,
   getUserLabels as getRedisUserLabels,
   emailheroLabelKeys,
   saveemailheroLabel,
   saveUserLabels,
+  emailheroLabelsType,
 } from "@/utils/redis/label";
 import { isDefined } from "@/utils/types";
 
@@ -101,7 +101,7 @@ export async function getUserLabel(options: {
 export async function getOrCreateemailheroLabels(
   email: string,
   gmail: gmail_v1.Gmail,
-): Promise<emailheroLabels> {
+): Promise<emailheroLabelsType> {
   // 1. check redis
   const redisLabels = await myemailheroLabels({ email });
 
@@ -142,7 +142,7 @@ export async function getOrCreateemailheroLabels(
     )
   ).filter(isDefined);
 
-  const res = Object.fromEntries(gmailRedisLabels) as emailheroLabels;
+  const res = Object.fromEntries(gmailRedisLabels) as emailheroLabelsType;
   return res;
 }
 

@@ -36,7 +36,6 @@ export function Hero(props: {
           {/* <div className="mb-10">
             <ProductHuntBadge />
           </div> */}
-
           <div className="mx-auto max-w-xl text-center">
             {/* <HeroText>{props.title || <HeroHeadingAB />}</HeroText> */}
             <HeroText>
@@ -51,6 +50,8 @@ export function Hero(props: {
                 />
                 <div>Gmail</div>
               </div>
+              {/* <div class="mt-4 text-2xl ">Using AI</div> */}
+              {/* <div>Using AI</div> */}
               {/* {props.title || "Instantly clean up your 📧Gmail"} */}
             </HeroText>
             <HeroSubtitle>
@@ -64,7 +65,7 @@ export function Hero(props: {
             </HeroSubtitle>
             <CTAButtons />
           </div>
-
+          Do you hate wasting time frustration and focus?
           <div className="mt-16 flow-root sm:mt-24">
             <div className="relative -m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
               <Image

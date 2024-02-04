@@ -13,6 +13,7 @@ const navigation = [
   { name: "Open Source", href: "/github", target: "_blank" as const },
   { name: "Affiliates", href: "/affiliates", target: "_blank" as const },
   { name: "Pricing", href: "/#pricing" },
+  { name: "Log in", href: "/#login" },
 ];
 
 export function Header() {
@@ -31,10 +32,11 @@ export function Header() {
               <img
                 src="/images/logo2.png"
                 alt="My Email Hero"
-                className="absolute mt-4 h-20"
+                className="absolute mt-4 h-20 shadow-black drop-shadow-lg"
+                // style={{filter: 'dropS'}}
               />
               {/* <span className="sr-only">My Email Hero</span> */}
-              <div className="ml-[6rem] translate-y-2 text-2xl font-bold opacity-80">
+              <div className="ml-[5.5rem] translate-y-1 text-2xl font-bold text-gray-700">
                 My Email Hero
               </div>
             </div>
@@ -58,18 +60,27 @@ export function Header() {
               href={item.href}
               target={item.target}
               prefetch={item.target !== "_blank"}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm font-semibold leading-6 text-gray-600"
             >
               {item.name}
             </Link>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          {/* <Link
+            href="/welcome"
+            className="mr-4 text-xs font-normal font-semibold leading-6 text-gray-500"
+          >
+            Log in
+          </Link> */}
           <Link
             href="/welcome"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className=" text-xl font-bold leading-6 text-gray-700"
           >
-            Log in <span aria-hidden="true">&rarr;</span>
+            Buy now{" "}
+            {/* <span className="text-xl" aria-hidden="true">
+              {">"}
+            </span> */}
           </Link>
         </div>
       </nav>
