@@ -14,19 +14,19 @@ const features = [
   {
     name: "Reply Automatically",
     description:
-      "Tell Inbox Zero how to handle your emails and it will do it for you. Automatically reply, archive, and label emails based on your instructions.",
+      "Tell My Email Hero how to handle your emails and it will do it for you. Automatically reply, archive, and label emails based on your instructions.",
     icon: Sparkles,
   },
   {
     name: "Automatically archive cold emails",
     description:
-      "Sick of cold emails? Inbox Zero can automatically archive and label them for you so they don't clog your inbox.",
+      "Sick of cold emails? My Email Hero can automatically archive and label them for you so they don't clog your inbox.",
     icon: Orbit,
   },
   {
     name: "Explain it in plain English",
     description:
-      "Tell Inbox Zero how to handle your emails in plain English. It's as simple as writing to an assistant or ChatGPT.",
+      "Tell My Email Hero how to handle your emails in plain English. It's as simple as writing to an assistant or ChatGPT.",
     icon: LineChart,
   },
 ];
@@ -92,9 +92,9 @@ export function Features() {
             host it yourself.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Inbox Zero has undergone a thorough security process with Google to
-            ensure the protection of your emails. You can even self-host Inbox
-            Zero on your own infrastructure.
+            My Email Hero has undergone a thorough security process with Google
+            to ensure the protection of your emails. You can even self-host
+            Inbox Zero on your own infrastructure.
           </p>
         </div>
       </div>
@@ -203,7 +203,7 @@ export function FeaturesAutomation() {
       imageSide="left"
       title="Automate your inbox"
       subtitle="Your AI assistant for email"
-      description="Keep getting emails that require the same response? Let Inbox Zero handle it."
+      description="Keep getting emails that require the same response? Let My Email Hero handle it."
       image="/images/rules.png"
       features={featuresAutomations}
     />

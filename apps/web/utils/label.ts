@@ -2,18 +2,18 @@ import "server-only";
 import { type gmail_v1 } from "googleapis";
 import prisma from "@/utils/prisma";
 import {
-  InboxZeroLabelKey,
-  InboxZeroLabels,
+  emailheroLabelKey,
+  emailheroLabels,
   RedisLabel,
-  getInboxZeroLabels,
+  myemailheroLabels,
   getUserLabels as getRedisUserLabels,
-  inboxZeroLabelKeys,
-  saveInboxZeroLabel,
+  emailheroLabelKeys,
+  saveemailheroLabel,
   saveUserLabels,
 } from "@/utils/redis/label";
 import { isDefined } from "@/utils/types";
 
-export const inboxZeroLabels: Record<InboxZeroLabelKey, string> = {
+export const emailheroLabels: Record<emailheroLabelKey, string> = {
   archived: "IZ Archived",
   labeled: "IZ Labeled",
   acted: "IZ Acted",
@@ -98,16 +98,16 @@ export async function getUserLabel(options: {
   return gmailLabel;
 }
 
-export async function getOrCreateInboxZeroLabels(
+export async function getOrCreateemailheroLabels(
   email: string,
   gmail: gmail_v1.Gmail,
-): Promise<InboxZeroLabels> {
+): Promise<emailheroLabels> {
   // 1. check redis
-  const redisLabels = await getInboxZeroLabels({ email });
+  const redisLabels = await myemailheroLabels({ email });
 
   if (
     redisLabels &&
-    Object.keys(redisLabels).length === inboxZeroLabelKeys.length
+    Object.keys(redisLabels).length === emailheroLabelKeys.length
   )
     return redisLabels;
 
@@ -117,48 +117,48 @@ export async function getOrCreateInboxZeroLabels(
   // 3. if gmail has them then save them to redis and return them
   const gmailRedisLabels = (
     await Promise.all(
-      inboxZeroLabelKeys.map(async (key) => {
+      emailheroLabelKeys.map(async (key) => {
         let gmailLabel = gmailLabels?.find(
-          (l) => l.name === inboxZeroLabels[key],
+          (l) => l.name === emailheroLabels[key],
         );
 
         if (!gmailLabel) {
           gmailLabel = await createGmailLabel({
-            name: inboxZeroLabels[key],
+            name: emailheroLabels[key],
             gmail,
           });
         }
 
         if (gmailLabel?.id && gmailLabel?.name) {
           const label = { id: gmailLabel.id, name: gmailLabel.name };
-          await saveInboxZeroLabel({
+          await saveemailheroLabel({
             email,
             labelKey: key,
             label,
           });
-          return [key, label] as [InboxZeroLabelKey, RedisLabel];
+          return [key, label] as [emailheroLabelKey, RedisLabel];
         }
       }),
     )
   ).filter(isDefined);
 
-  const res = Object.fromEntries(gmailRedisLabels) as InboxZeroLabels;
+  const res = Object.fromEntries(gmailRedisLabels) as emailheroLabels;
   return res;
 }
 
-export async function getOrCreateInboxZeroLabel(options: {
-  labelKey: InboxZeroLabelKey;
+export async function getOrCreateemailheroLabel(options: {
+  labelKey: emailheroLabelKey;
   email: string;
   gmail: gmail_v1.Gmail;
 }): Promise<RedisLabel | undefined> {
   const { gmail, labelKey, email } = options;
 
-  const redisLabel = await getInboxZeroLabels({ email });
+  const redisLabel = await myemailheroLabels({ email });
   if (redisLabel) return redisLabel[labelKey];
 
   const gmailLabels = await getGmailLabels(gmail);
 
-  const labelName = inboxZeroLabels[labelKey];
+  const labelName = emailheroLabels[labelKey];
 
   let gmailLabel = gmailLabels?.find((l) => l.name === labelName);
 
@@ -171,7 +171,7 @@ export async function getOrCreateInboxZeroLabel(options: {
 
   if (gmailLabel?.id && gmailLabel?.name) {
     const label = { id: gmailLabel.id, name: gmailLabel.name };
-    await saveInboxZeroLabel({
+    await saveemailheroLabel({
       email,
       labelKey,
       label,

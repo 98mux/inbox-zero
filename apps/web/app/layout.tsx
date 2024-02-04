@@ -23,9 +23,9 @@ const calFont = localFont({
   display: "swap",
 });
 
-const title = "Inbox Zero | Clean your inbox in minutes";
+const title = "My Email Hero | Clean your inbox in minutes";
 const description =
-  "Inbox Zero is the quickest way to reach inbox zero, with our newsletter cleaner, AI automation, cold email blocker, and email analytics.";
+  "My Email Hero is the quickest way to reach My Email Hero, with our newsletter cleaner, AI automation, cold email blocker, and email analytics.";
 
 export const metadata: Metadata = {
   title,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    creator: "@inboxzero_ai",
+    creator: "@emailhero_ai",
   },
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
   // issues with robots.txt: https://github.com/vercel/next.js/issues/58615#issuecomment-1852457285

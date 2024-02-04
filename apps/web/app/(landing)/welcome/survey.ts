@@ -39,7 +39,7 @@ export const survey = {
     },
     {
       type: "single_choice",
-      question: "How did you hear about Inbox Zero?",
+      question: "How did you hear about My Email Hero?",
       choices: [
         "Search",
         "Friend",

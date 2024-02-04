@@ -1,9 +1,9 @@
 import { z } from "zod";
 import { NextResponse } from "next/server";
 import { subDays } from "date-fns";
-import { sendStatsEmail } from "@inboxzero/resend";
+import { sendStatsEmail } from "@emailhero/resend";
 import { withError } from "@/utils/middleware";
-import { getWeeklyStats } from "@inboxzero/tinybird";
+import { getWeeklyStats } from "@emailhero/tinybird";
 import { env } from "@/env.mjs";
 import { hasCronSecret } from "@/utils/cron";
 import { captureException } from "@/utils/error";

@@ -2,7 +2,7 @@ const faqs = [
   {
     question: "Do you store my emails?",
     answer:
-      "We store a hashed version of your emails for our analytics feature. As our code is open-source you can check our code to see this for yourself. For full data privacy you can self-host your own instance of Inbox Zero.",
+      "We store a hashed version of your emails for our analytics feature. As our code is open-source you can check our code to see this for yourself. For full data privacy you can self-host your own instance of My Email Hero.",
   },
   {
     question: "Is the code open-source?",
@@ -34,7 +34,7 @@ const faqs = [
         </a>{" "}
         or{" "}
         <a
-          href="mailto:elie@getinboxzero.com"
+          href="mailto:elie@myemailhero.com"
           target="_blank"
           className="font-semibold hover:underline"
         >
@@ -45,12 +45,12 @@ const faqs = [
     ),
   },
   {
-    question: "Can I still use Inbox Zero alonside my current email client?",
+    question: "Can I still use My Email Hero alonside my current email client?",
     answer:
-      "Yes! Inbox Zero is intended to be used alongside your existing email client.",
+      "Yes! My Email Hero is intended to be used alongside your existing email client.",
   },
   {
-    question: "Which email providers does Inbox Zero support?",
+    question: "Which email providers does My Email Hero support?",
     answer:
       "We only support Gmail and Gsuite email accounts today. We may add support for other email providers such as Outlook in the future.",
   },
@@ -60,7 +60,7 @@ const faqs = [
       <>
         If you don{"'"}t think we provided you with value send us an{" "}
         <a
-          href="mailto:elie@getinboxzero.com"
+          href="mailto:elie@myemailhero.com"
           target="_blank"
           className="font-semibold hover:underline"
         >

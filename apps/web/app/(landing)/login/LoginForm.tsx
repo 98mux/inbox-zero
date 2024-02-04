@@ -35,15 +35,15 @@ export function LoginForm() {
         <Modal title="Sign in" isOpen={isModalOpen} hideModal={closeModal}>
           <div className="mt-2">
             <SectionDescription>
-              By continuing you agree to allow Inbox Zero to send your emails to
-              OpenAI for processing. OpenAI does not use the submitted data to
-              train or improve their AI models.
+              By continuing you agree to allow My Email Hero to send your emails
+              to OpenAI for processing. OpenAI does not use the submitted data
+              to train or improve their AI models.
             </SectionDescription>
 
             <div className="mt-8">
               <SectionDescription>
-                Inbox Zero{"'"}s use and transfer of information received from
-                Google APIs to any other app will adhere to{" "}
+                My Email Hero{"'"}s use and transfer of information received
+                from Google APIs to any other app will adhere to{" "}
                 <a
                   href="https://developers.google.com/terms/api-services-user-data-policy"
                   className="underline underline-offset-4 hover:text-gray-900"

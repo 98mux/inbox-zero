@@ -41,38 +41,38 @@ export async function deleteUserLabels(options: { email: string }) {
   return redis.del(key);
 }
 
-// inbox zero labels
-function getInboxZeroLabelsKey(email: string) {
-  return `labels:inboxzero:${email}`;
+// My Email Hero labels
+function myemailheroLabelsKey(email: string) {
+  return `labels:emailhero:${email}`;
 }
 
-export type InboxZeroLabelKey = "archived" | "labeled" | "acted" | "cold_email";
+export type emailheroLabelKey = "archived" | "labeled" | "acted" | "cold_email";
 // | "drafted"
 // | "suggested_label";
-export type InboxZeroLabels = Record<InboxZeroLabelKey, RedisLabel>;
+export type emailheroLabels = Record<emailheroLabelKey, RedisLabel>;
 
-export const inboxZeroLabelKeys: InboxZeroLabelKey[] = [
+export const emailheroLabelKeys: emailheroLabelKey[] = [
   "archived",
   "labeled",
   // "drafted",
   // "suggested_label",
 ];
 
-export async function getInboxZeroLabels(options: { email: string }) {
-  const key = getInboxZeroLabelsKey(options.email);
-  return redis.hgetall<InboxZeroLabels>(key);
+export async function myemailheroLabels(options: { email: string }) {
+  const key = myemailheroLabelsKey(options.email);
+  return redis.hgetall<emailheroLabels>(key);
 }
 
-export async function saveInboxZeroLabel(options: {
+export async function saveemailheroLabel(options: {
   email: string;
   labelKey: string;
   label: RedisLabel;
 }) {
-  const key = getInboxZeroLabelsKey(options.email);
+  const key = myemailheroLabelsKey(options.email);
   return redis.hset(key, { [options.labelKey]: options.label });
 }
 
-export async function deleteInboxZeroLabels(options: { email: string }) {
-  const key = getInboxZeroLabelsKey(options.email);
+export async function deleteemailheroLabels(options: { email: string }) {
+  const key = myemailheroLabelsKey(options.email);
   return redis.del(key);
 }

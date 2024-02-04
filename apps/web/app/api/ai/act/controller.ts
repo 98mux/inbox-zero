@@ -18,7 +18,7 @@ import prisma from "@/utils/prisma";
 import { markPlanExecuted, savePlan } from "@/utils/redis/plan";
 import { Action, Rule } from "@prisma/client";
 import { ActBody, ActBodyWithHtml } from "@/app/api/ai/act/validation";
-import { getOrCreateInboxZeroLabel } from "@/utils/label";
+import { getOrCreateemailheroLabel } from "@/utils/label";
 import { labelThread } from "@/utils/gmail/label";
 import { ChatCompletionCreateParams } from "openai/resources/chat";
 import { parseJSON, parseJSONWithMultilines } from "@/utils/json";
@@ -391,7 +391,7 @@ export async function executeAct(options: {
   );
 
   async function labelActed() {
-    const label = await getOrCreateInboxZeroLabel({
+    const label = await getOrCreateemailheroLabel({
       gmail,
       email: userEmail,
       labelKey: "acted",

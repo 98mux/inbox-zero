@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { auth } from "@/app/api/auth/[...nextauth]/auth";
-import { getEmailsFromSender, zodPeriod } from "@inboxzero/tinybird";
+import { getEmailsFromSender, zodPeriod } from "@emailhero/tinybird";
 import { format } from "date-fns";
 import { withError } from "@/utils/middleware";
 

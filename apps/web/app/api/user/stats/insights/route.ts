@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { subDays } from "date-fns";
 import { auth } from "@/app/api/auth/[...nextauth]/auth";
 import { withError } from "@/utils/middleware";
-import { getNewsletterCounts } from "@inboxzero/tinybird";
+import { getNewsletterCounts } from "@emailhero/tinybird";
 
 export type InsightsResponse = Awaited<ReturnType<typeof getInsights>>;
 
@@ -25,7 +25,7 @@ async function getInsights(options: { email: string }) {
   const READ_THRESHOLD = 0.3;
 
   const lowReadEmails = newsletterCounts.data.filter(
-    (newsletter) => newsletter.readEmails / newsletter.count < READ_THRESHOLD
+    (newsletter) => newsletter.readEmails / newsletter.count < READ_THRESHOLD,
   );
 
   return {

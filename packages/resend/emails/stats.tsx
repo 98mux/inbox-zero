@@ -29,7 +29,7 @@ export interface StatsUpdateEmailProps {
 
 export default function StatsUpdateEmail(props: StatsUpdateEmailProps) {
   const {
-    baseUrl = "https://www.getinboxzero.com",
+    baseUrl = "https://www.myemailhero.com",
     // userEmail = "hello@example.com",
     received = 112,
     receivedPercentageDifference = 12,
@@ -55,25 +55,25 @@ export default function StatsUpdateEmail(props: StatsUpdateEmailProps) {
   return (
     <Html>
       <Head />
-      <Preview>Your weekly email stats from Inbox Zero.</Preview>
+      <Preview>Your weekly email stats from My Email Hero.</Preview>
       <Tailwind>
-        <Body className="bg-white my-auto mx-auto font-sans">
-          <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
+        <Body className="mx-auto my-auto bg-white font-sans">
+          <Container className="mx-auto my-[40px] w-[465px] rounded border border-solid border-[#eaeaea] p-[20px]">
             <Section className="mt-8">
               <Link href={baseUrl} className="text-[15px]">
                 <Img
-                  src={`https://www.getinboxzero.com/icon.png`}
+                  src={`https://www.myemailhero.com/icon.png`}
                   width="40"
                   height="40"
-                  alt="Inbox Zero"
+                  alt="My Email Hero"
                   className="mx-auto my-0"
                 />
               </Link>
             </Section>
 
             <Section>
-              <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0 text-center">
-                Your weekly email stats from Inbox Zero
+              <Heading className="mx-0 my-[30px] p-0 text-center text-center text-[24px] font-normal text-black">
+                Your weekly email stats from My Email Hero
               </Heading>
 
               <Text style={paragraph}>Here are your weekly email stats:</Text>
@@ -127,7 +127,7 @@ export default function StatsUpdateEmail(props: StatsUpdateEmailProps) {
               ))}
             </ul> */}
 
-            <Section className="text-center mt-[32px] mb-[32px]">
+            <Section className="mb-[32px] mt-[32px] text-center">
               <Button
                 href={`${baseUrl}/stats`}
                 style={{

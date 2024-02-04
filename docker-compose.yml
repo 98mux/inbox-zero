@@ -7,7 +7,7 @@ services:
     container_name: inbox-zero
     environment:
       POSTGRES_USER: "postgres"
-      POSTGRES_DB: "inboxzero"
+      POSTGRES_DB: "emailhero"
       POSTGRES_PASSWORD: password
     volumes:
       - database-data:/var/lib/postgresql/data/

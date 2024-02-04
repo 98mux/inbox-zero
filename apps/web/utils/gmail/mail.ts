@@ -54,7 +54,7 @@ const createRawMailMessage = async (body: SendEmailBody) => {
       : "",
     inReplyTo: body.replyToEmail ? body.replyToEmail.headerMessageId : "",
     headers: {
-      "X-Mailer": "Inbox Zero Web",
+      "X-Mailer": "My Email Hero Web",
     },
   });
 };

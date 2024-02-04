@@ -1,6 +1,6 @@
 import { AIModel } from "@/utils/openai";
 import { saveUsage } from "@/utils/redis/usage";
-import { publishAiCall } from "@inboxzero/tinybird-ai-analytics";
+import { publishAiCall } from "@emailhero/tinybird-ai-analytics";
 
 export async function saveAiUsage({
   email,

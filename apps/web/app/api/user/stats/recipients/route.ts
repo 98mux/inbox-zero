@@ -11,7 +11,7 @@ import {
   getDomainsMostSentTo,
   getMostSentTo,
   zodPeriod,
-} from "@inboxzero/tinybird";
+} from "@emailhero/tinybird";
 import { extractDomainFromEmail } from "@/utils/email";
 import { withError } from "@/utils/middleware";
 

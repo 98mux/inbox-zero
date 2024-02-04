@@ -2,7 +2,7 @@ import { z } from "zod";
 import { type gmail_v1 } from "googleapis";
 import { parseJSON } from "@/utils/json";
 import { DEFAULT_AI_MODEL, UserAIFields, getOpenAI } from "@/utils/openai";
-import { INBOX_LABEL_ID, getOrCreateInboxZeroLabel } from "@/utils/label";
+import { INBOX_LABEL_ID, getOrCreateemailheroLabel } from "@/utils/label";
 import { labelMessage } from "@/utils/gmail/label";
 import { ColdEmailSetting, ColdEmailStatus } from "@prisma/client";
 import prisma from "@/utils/prisma";
@@ -164,7 +164,7 @@ async function blockColdEmail(options: {
     coldEmailBlocker === ColdEmailSetting.LABEL ||
     coldEmailBlocker === ColdEmailSetting.ARCHIVE_AND_LABEL
   ) {
-    const gmailLabel = await getOrCreateInboxZeroLabel({
+    const gmailLabel = await getOrCreateemailheroLabel({
       gmail,
       labelKey: "cold_email",
       email: userEmail,

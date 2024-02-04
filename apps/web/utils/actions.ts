@@ -3,8 +3,8 @@
 import { z } from "zod";
 import uniq from "lodash/uniq";
 import { withServerActionInstrumentation } from "@sentry/nextjs";
-import { deleteContact as deleteLoopsContact } from "@inboxzero/loops";
-import { deleteContact as deleteResendContact } from "@inboxzero/resend";
+import { deleteContact as deleteLoopsContact } from "@emailhero/loops";
+import { deleteContact as deleteResendContact } from "@emailhero/resend";
 import {
   createFilterFromPrompt,
   type PromptQuery,
@@ -16,14 +16,14 @@ import { auth } from "@/app/api/auth/[...nextauth]/auth";
 import prisma from "@/utils/prisma";
 import { NewsletterStatus, type Label, PremiumTier } from "@prisma/client";
 import {
-  deleteInboxZeroLabels,
+  deleteemailheroLabels,
   deleteUserLabels,
   saveUserLabels,
 } from "@/utils/redis/label";
 import { deletePlans } from "@/utils/redis/plan";
 import { deleteUserStats } from "@/utils/redis/stats";
-import { deleteTinybirdEmails } from "@inboxzero/tinybird";
-import { deleteTinybirdAiCalls } from "@inboxzero/tinybird-ai-analytics";
+import { deleteTinybirdEmails } from "@emailhero/tinybird";
+import { deleteTinybirdAiCalls } from "@emailhero/tinybird-ai-analytics";
 import { deletePosthogUser } from "@/utils/posthog";
 import { createAutoArchiveFilter, deleteFilter } from "@/utils/gmail/filter";
 import { getGmailClient } from "@/utils/gmail/client";
@@ -84,7 +84,7 @@ export async function deleteAccountAction() {
   try {
     await Promise.allSettled([
       deleteUserLabels({ email: session.user.email }),
-      deleteInboxZeroLabels({ email: session.user.email }),
+      deleteemailheroLabels({ email: session.user.email }),
       deletePlans({ userId: session.user.id }),
       deleteUserStats({ email: session.user.email }),
       deleteTinybirdEmails({ email: session.user.email }),
@@ -414,7 +414,7 @@ export async function updateMultiAccountPremium(
       if (users.length < uniqueEmails.length) {
         return {
           warning:
-            "Not all users exist. Each account must sign up to Inbox Zero to share premium with it.",
+            "Not all users exist. Each account must sign up to My Email Hero to share premium with it.",
         };
       }
     },

@@ -37,7 +37,7 @@ export const env = createEnv({
       .transform((value) => value?.split(",")),
   },
   client: {
-    NEXT_PUBLIC_LEMON_STORE_ID: z.string().nullish().default("inboxzero"),
+    NEXT_PUBLIC_LEMON_STORE_ID: z.string().nullish().default("emailhero"),
 
     // lemon plans
     // pro
@@ -60,13 +60,13 @@ export const env = createEnv({
     NEXT_PUBLIC_CALL_LINK: z.string().default("https://cal.com/team/inbox-zero/feedback"),
     NEXT_PUBLIC_POSTHOG_KEY: z.string().optional(),
     NEXT_PUBLIC_POSTHOG_ONBOARDING_SURVEY_ID: z.string().optional(),
-    NEXT_PUBLIC_BASE_URL: z.string().default("https://www.getinboxzero.com"),
+    NEXT_PUBLIC_BASE_URL: z.string().default("https://www.myemailhero.com"),
     NEXT_PUBLIC_CONTACTS_ENABLED: z.coerce.boolean().optional().default(false),
     NEXT_PUBLIC_SENTRY_DSN: z.string().optional(),
     NEXT_PUBLIC_SUPPORT_EMAIL: z
       .string()
       .optional()
-      .default("elie@getinboxzero.com"),
+      .default("elie@myemailhero.com"),
     NEXT_PUBLIC_GTM_ID: z.string().optional(),
   },
   // For Next.js >= 13.4.4, you only need to destructure client variables:

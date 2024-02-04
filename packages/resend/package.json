@@ -1,5 +1,5 @@
 {
-  "name": "@inboxzero/resend",
+  "name": "@emailhero/resend",
   "version": "0.0.0",
   "main": "src/index.ts",
   "scripts": {

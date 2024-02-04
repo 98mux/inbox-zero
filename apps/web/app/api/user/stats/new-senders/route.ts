@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { subDays } from "date-fns";
-import { getNewSenders } from "@inboxzero/tinybird";
+import { getNewSenders } from "@emailhero/tinybird";
 import { auth } from "@/app/api/auth/[...nextauth]/auth";
 import { withError } from "@/utils/middleware";
 import {

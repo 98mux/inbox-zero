@@ -5,7 +5,7 @@ import {
   getDomainsMostReceivedFrom,
   getMostReceivedFrom,
   zodPeriod,
-} from "@inboxzero/tinybird";
+} from "@emailhero/tinybird";
 import { withError } from "@/utils/middleware";
 
 const senderStatsQuery = z.object({

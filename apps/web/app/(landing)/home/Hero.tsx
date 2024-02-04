@@ -33,21 +33,21 @@ export function Hero(props: {
       <div className="pt-24 sm:pb-12 sm:pt-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* <HeroTag /> */}
-          <div className="mb-10">
+          {/* <div className="mb-10">
             <ProductHuntBadge />
-          </div>
+          </div> */}
 
           <div className="mx-auto max-w-xl text-center">
             {/* <HeroText>{props.title || <HeroHeadingAB />}</HeroText> */}
             <HeroText>
-              {props.title || "Clean Up Your Inbox In Minutes"}
+              {props.title || "Instantly clean up your Gmail"}
             </HeroText>
             <HeroSubtitle>
               {props.subtitle || (
                 <>
                   Newsletter cleaner, AI automation, cold email blocker, and
-                  analytics. Inbox Zero is the open-source email app that puts
-                  you back in control of your inbox.
+                  analytics. My Email Hero is the open-source email app that
+                  puts you back in control of your inbox.
                 </>
               )}
             </HeroSubtitle>

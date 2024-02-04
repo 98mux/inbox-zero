@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { auth } from "@/app/api/auth/[...nextauth]/auth";
-import { getNewsletterCounts } from "@inboxzero/tinybird";
+import { getNewsletterCounts } from "@emailhero/tinybird";
 import { withError } from "@/utils/middleware";
 import {
   filterNewsletters,

@@ -27,8 +27,18 @@ export function Header() {
       >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Inbox Zero</span>
-            <Logo className="h-4 w-auto" />
+            <div className="flex items-center gap-2">
+              <img
+                src="/images/logo2.png"
+                alt="My Email Hero"
+                className="absolute mt-4 h-24"
+              />
+              {/* <span className="sr-only">My Email Hero</span> */}
+              <div className="ml-[7rem] translate-y-2 text-2xl font-bold opacity-80">
+                My Email Hero
+              </div>
+            </div>
+            {/* <Logo className="h-4 w-auto" /> */}
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -73,7 +83,7 @@ export function Header() {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Inbox Zero</span>
+              <span className="sr-only">My Email Hero</span>
               <Logo className="h-4 w-auto" />
             </Link>
             <button

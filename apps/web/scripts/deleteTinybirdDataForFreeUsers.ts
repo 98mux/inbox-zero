@@ -2,7 +2,7 @@
 // This script deletes all Tinybird data for users who are on the free plan.
 
 import { PrismaClient } from "@prisma/client";
-import { deleteTinybirdEmails } from "@inboxzero/tinybird";
+import { deleteTinybirdEmails } from "@emailhero/tinybird";
 import { sleep } from "@/utils/sleep";
 
 const prisma = new PrismaClient();

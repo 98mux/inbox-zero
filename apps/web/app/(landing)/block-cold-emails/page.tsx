@@ -10,7 +10,7 @@ import { CTA } from "@/app/(landing)/home/CTA";
 import { BasicLayout } from "@/components/layouts/BasicLayout";
 
 export const metadata: Metadata = {
-  title: "Cold Email Blocker | Inbox Zero",
+  title: "Cold Email Blocker | My Email Hero",
   description: "Automatically block cold emails from your inbox using AI.",
   alternates: { canonical: "/block-cold-emails" },
 };

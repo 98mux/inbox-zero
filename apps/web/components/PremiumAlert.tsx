@@ -27,10 +27,10 @@ export function usePremium() {
 }
 
 export function PremiumAlert({
-  plan = "Inbox Zero Business",
+  plan = "My Email Hero Business",
   showSetApiKey,
 }: {
-  plan?: "Inbox Zero Business" | "Inbox Zero Pro";
+  plan?: "My Email Hero Business" | "My Email Hero Pro";
   showSetApiKey: boolean;
 }) {
   return (

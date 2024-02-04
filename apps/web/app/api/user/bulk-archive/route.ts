@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { type gmail_v1 } from "googleapis";
 import { auth } from "@/app/api/auth/[...nextauth]/auth";
 import { getGmailClient } from "@/utils/gmail/client";
-import { INBOX_LABEL_ID, getOrCreateInboxZeroLabels } from "@/utils/label";
+import { INBOX_LABEL_ID, getOrCreateemailheroLabels } from "@/utils/label";
 import { sleep } from "@/utils/sleep";
 import { withError } from "@/utils/middleware";
 
@@ -25,7 +25,7 @@ async function bulkArchive(
 
   console.log(`Archiving ${res.data.threads?.length} threads`);
 
-  const izLabels = await getOrCreateInboxZeroLabels(email, gmail);
+  const izLabels = await getOrCreateemailheroLabels(email, gmail);
 
   for (const thread of res.data.threads || []) {
     await gmail.users.threads.modify({

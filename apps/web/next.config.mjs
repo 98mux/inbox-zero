@@ -32,12 +32,12 @@ const nextConfig = {
     return [
       {
         source: "/feature-requests",
-        destination: "https://inboxzero.canny.io/feature-requests",
+        destination: "https://emailhero.canny.io/feature-requests",
         permanent: true,
       },
       {
         source: "/twitter",
-        destination: "https://twitter.com/inboxzero_ai",
+        destination: "https://twitter.com/emailhero_ai",
         permanent: true,
       },
       {
@@ -57,7 +57,7 @@ const nextConfig = {
       },
       {
         source: "/affiliates",
-        destination: "https://inboxzero.lemonsqueezy.com/affiliates",
+        destination: "https://emailhero.lemonsqueezy.com/affiliates",
         permanent: true,
       },
     ];
