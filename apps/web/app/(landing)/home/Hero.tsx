@@ -40,7 +40,18 @@ export function Hero(props: {
           <div className="mx-auto max-w-xl text-center">
             {/* <HeroText>{props.title || <HeroHeadingAB />}</HeroText> */}
             <HeroText>
-              {props.title || "Instantly clean up your Gmail"}
+              {/* {props.title || "Clean up your Gmail, instantly"} */}
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {/* <div>Instantly clean up your</div> */}
+                <div>Instantly clean your</div>
+                <img
+                  src="/images/gmail_logo.png"
+                  alt="Gmail"
+                  className="h-16"
+                />
+                <div>Gmail</div>
+              </div>
+              {/* {props.title || "Instantly clean up your 📧Gmail"} */}
             </HeroText>
             <HeroSubtitle>
               {props.subtitle || (

@@ -3,7 +3,7 @@ import { type gmail_v1 } from "googleapis";
 import prisma from "@/utils/prisma";
 import {
   emailheroLabelKey,
-  emailheroLabels,
+  // emailheroLabels,
   RedisLabel,
   myemailheroLabels,
   getUserLabels as getRedisUserLabels,

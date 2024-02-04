@@ -31,10 +31,10 @@ export function Header() {
               <img
                 src="/images/logo2.png"
                 alt="My Email Hero"
-                className="absolute mt-4 h-24"
+                className="absolute mt-4 h-20"
               />
               {/* <span className="sr-only">My Email Hero</span> */}
-              <div className="ml-[7rem] translate-y-2 text-2xl font-bold opacity-80">
+              <div className="ml-[6rem] translate-y-2 text-2xl font-bold opacity-80">
                 My Email Hero
               </div>
             </div>
