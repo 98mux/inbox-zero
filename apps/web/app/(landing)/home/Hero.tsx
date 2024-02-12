@@ -54,16 +54,25 @@ export function Hero(props: {
               {/* <div>Using AI</div> */}
               {/* {props.title || "Instantly clean up your 📧Gmail"} */}
             </HeroText>
-            <HeroSubtitle>
-              {props.subtitle || (
-                <>
-                  Newsletter cleaner, AI automation, cold email blocker, and
-                  analytics. My Email Hero is the open-source email app that
-                  puts you back in control of your inbox.
-                </>
-              )}
-            </HeroSubtitle>
+
             <CTAButtons />
+            <HeroSubtitle>
+              {/* {props.subtitle || ( */}
+              <li>
+                <ol>Newsletter cleaner</ol>
+
+                <ol>AI Automation</ol>
+
+                <ol>Cold email blocker</ol>
+
+                <ol>Analytics</ol>
+
+                {/* Newsletter cleaner, AI automation, cold email blocker, and
+                  analytics. My Email Hero is the open-source email app that
+                  puts you back in control of your inbox. */}
+              </li>
+              {/* )} */}
+            </HeroSubtitle>
           </div>
           Do you hate wasting time frustration and focus?
           <div className="mt-16 flow-root sm:mt-24">
@@ -76,7 +85,7 @@ export function Hero(props: {
                 className="rounded-md shadow ring-1 ring-gray-900/10"
               />
 
-              <VideoDemo />
+              {/* <VideoDemo /> */}
             </div>
           </div>
         </div>

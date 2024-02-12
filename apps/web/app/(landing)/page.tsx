@@ -23,7 +23,7 @@ export default function Home() {
     <BasicLayout>
       <Hero />
       {/* <LogoCloud /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Features />
       <FeaturesUnsubscribe />
       <FeaturesStats />
